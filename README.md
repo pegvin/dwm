@@ -3,10 +3,7 @@ my dwm
 
 ---
 ### Applied Patches
-none
-
-### Other Changes
-- Keybinds For Volume Up/Down (requires 'amixer' from [alsa-utils](https://archlinux.org/packages/extra/x86_64/alsa-utils/))
+- [systray](https://dwm.suckless.org/patches/systray/dwm-systray-6.4.diff)
 
 ---
 ## Thanks
