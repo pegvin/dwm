@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
@@ -73,8 +73,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	// { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	// { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -103,13 +103,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 	// My Custom Keybinds
-
-	// amixer (from alsa-utils) is required to change volume
-	/* Update: i disabled volume binds, because now i control my volume using "volup" and "voldown" bash scripts i wrote.
-	           these scripts will basically set the volume and then restart the dwmbar, so that the volume is reflected in it. */
-	// { 0,                       XF86XK_AudioLowerVolume, spawn, {.v = { "/usr/bin/amixer",  "set", "Master", "5%-", NULL } }},
-	// { 0,                       XF86XK_AudioMute, 		spawn, {.v = { "/usr/bin/amixerl", "set", "Master", "toggle", NULL } }},
-	// { 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = { "/usr/bin/amixer",  "set", "Master", "5%+", NULL } }},
+	{ 0, XK_Print, spawn, SHCMD("aunty capture") },
 };
 
 /* button definitions */
