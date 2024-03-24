@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 };
 
 #define ICONSIZE (bh - 4)   /* icon size in pixels */
-#define ICONSPACING 5 /* space (pixels) between icon and title */
+#define ICONSPACING 4 /* space (pixels) between icon and title */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
